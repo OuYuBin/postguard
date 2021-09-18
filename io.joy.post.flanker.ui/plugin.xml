@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="com.gesila.test.guard.ui.category"
+            class="io.joy.post.flanker.ui.views.GsilaTestGuardResponseViewPart"
+            icon="icons/response.png"
+            id="com.gesila.test.guard.ui.views.GsilaTestGuardResponseViewPart"
+            name="PostFlanker响应"
+            restorable="true">
+      </view>
+      <view
+            category="com.gesila.test.guard.ui.category"
+            class="io.joy.post.flanker.ui.views.TestGuardPropertyPageBookView"
+            icon="icons/direction--arrow.png"
+            id="com.gesila.test.guard.ui.views.TestGuardPropertyPageBookView"
+            name="PostFlanker属性"
+            restorable="true">
+      </view>
+      <category
+            id="com.gesila.test.guard.ui.category"
+            name="PostFlanker">
+      </category>
+   </extension>
+
+</plugin>

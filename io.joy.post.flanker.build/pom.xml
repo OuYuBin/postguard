@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>io.joy.post.flanker.build</artifactId>
+  <packaging>pom</packaging>
+  <parent>
+  	<groupId>com.gesila</groupId>
+  	<artifactId>com.gesila.test.guard</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <modules>
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	<module>../../jsontools/JsonEditor</module>
+  	<module>../../jsontools/JsonFeature</module>
+  	
+  	<module>
+  		../../../eclipse-workspace/com.jd.lcp.wuliuyun.api.doc
+  	</module>
+  	<module>
+  		../../../eclipse-workspace/com.jd.lcp.wuliuyun.api.doc.edit
+  	</module>
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	<module>../io.joy.post.flanker.activity</module>
+  	<module>../io.joy.post.flanker.application.e3</module>
+  	<module>../io.joy.post.flanker.common</module>
+  	<module>../io.joy.post.flanker.common.editor</module>
+  	<module>../io.joy.post.flanker.console</module>
+  	<module>../io.joy.post.flanker.edit</module>
+  	<module>../io.joy.post.flanker.editor</module>
+  	<module>../io.joy.post.flanker.feature</module>
+  	<module>../io.joy.post.flanker.http</module>
+  	<module>../io.joy.post.flanker.json</module>
+  	<module>../io.joy.post.flanker.log</module>
+  	<module>../io.joy.post.flanker.model</module>
+  	<module>../io.joy.post.flanker.model.edit</module>
+  	<module>../io.joy.post.flanker.product</module>
+  	<module>../io.joy.post.flanker.project</module>
+  	<module>../io.joy.post.flanker.target</module>
+  	<module>../io.joy.post.flanker.target.core</module>
+  	<module>../io.joy.post.flanker.target.edit</module>
+  	<module>../io.joy.post.flanker.target.editor</module>
+  	<module>../io.joy.post.flanker.target.model</module>
+  	<module>../io.joy.post.flanker.target.ui</module>
+  	<module>../io.joy.post.flanker.ui</module>
+  	<module>../io.joy.post.flanker.navigator.ui</module>
+  </modules>
+</project>

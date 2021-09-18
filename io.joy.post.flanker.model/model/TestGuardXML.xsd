@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:lcp="http:///com/jd/lcp/wuliuyun/api/doc.ecore/1.0.0" xmlns:testGuard="http://www.igesila.com/testGuard/0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.igesila.com/testGuard/0.1">
+  <xsd:import namespace="http:///com/jd/lcp/wuliuyun/api/doc.ecore/1.0.0" schemaLocation="apidoc.xsd"/>
+  <xsd:simpleType name="EntityHeaderFields">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="Allow"/>
+      <xsd:enumeration value="ContentEncoding"/>
+      <xsd:enumeration value="ContentLanguage"/>
+      <xsd:enumeration value="ContentLength"/>
+      <xsd:enumeration value="ContentLocation"/>
+      <xsd:enumeration value="ContentMD5"/>
+      <xsd:enumeration value="ContentRange"/>
+      <xsd:enumeration value="ContentType"/>
+      <xsd:enumeration value="Expires"/>
+      <xsd:enumeration value="LastModified"/>
+      <xsd:enumeration value="Accept"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Method">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="GET"/>
+      <xsd:enumeration value="POST"/>
+      <xsd:enumeration value="UPDATE"/>
+      <xsd:enumeration value="PUT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="TestGuard">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Headers" type="testGuard:Headers"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Params" type="testGuard:Params"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="requestBody" type="testGuard:RequestBody"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="api" type="lcp:api"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="url" type="xsd:string"/>
+    <xsd:attribute name="method" type="xsd:string"/>
+    <xsd:attribute name="desc" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="TestGuard" type="testGuard:TestGuard"/>
+  <xsd:complexType name="TestGuardModule">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Unit" type="testGuard:TestGuardUnit"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="TestGuardModule" type="testGuard:TestGuardModule"/>
+  <xsd:complexType name="TestGuardUnit">
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="url" type="xsd:string"/>
+    <xsd:attribute name="requestBody" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="TestGuardUnit" type="testGuard:TestGuardUnit"/>
+  <xsd:complexType name="Headers">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Header" type="testGuard:Header"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Headers" type="testGuard:Headers"/>
+  <xsd:complexType name="Header">
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="value" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Header" type="testGuard:Header"/>
+  <xsd:complexType name="RequestBody">
+    <xsd:attribute name="value" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="RequestBody" type="testGuard:RequestBody"/>
+  <xsd:complexType name="Params">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Param" type="testGuard:Param"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Params" type="testGuard:Params"/>
+  <xsd:complexType name="Param">
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="value" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Param" type="testGuard:Param"/>
+</xsd:schema>

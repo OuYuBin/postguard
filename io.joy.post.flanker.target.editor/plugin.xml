@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+
+
+
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated target -->
+      <editor
+            id="com.keliangtek.simulab.target.editor.TargetEditorID"
+            name="%_UI_TargetEditor_label"
+            icon="icons/target.png"
+            extensions="cfg"
+            class="com.keliangtek.simulab.target.editor.SimulabTargetEditor"
+            contributorClass="com.keliangtek.simulab.target.editor.SimulabTargetActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

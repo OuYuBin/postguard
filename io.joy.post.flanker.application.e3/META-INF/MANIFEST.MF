@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: E3
+Bundle-SymbolicName: io.joy.post.flanker.application.e3;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: io.joy.post.flanker.application.e3.Activator
+Bundle-Vendor: GESILA
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.e4.ui.workbench.addons.swt,
+ org.eclipse.core.resources,
+ org.eclipse.ui.console,
+ org.eclipse.ui.ide,
+ org.eclipse.e4.ui.workbench,
+ org.eclipse.e4.ui.workbench.renderers.swt
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

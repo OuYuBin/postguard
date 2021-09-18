@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PostFlanker Http
+Bundle-SymbolicName: io.joy.post.flanker.http
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.gesila.test.guard.http.Activator
+Bundle-Vendor: jd.com
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ io.joy.post.flanker.json;bundle-version="1.0.0",
+ io.joy.post.flanker.model,
+ org.apache.commons.httpclient,
+ org.apache.httpcomponents.httpclient,
+ org.apache.httpcomponents.httpcore,
+ org.apache.commons.lang,
+ io.joy.post.flanker.console;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Export-Package: com.gesila.test.guard.http,
+ com.gesila.test.guard.http.models

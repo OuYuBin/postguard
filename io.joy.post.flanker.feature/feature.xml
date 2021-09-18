@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="io.joy.post.flanker.feature"
+      label="PostFlanker Feature"
+      version="1.0.0.qualifier"
+      provider-name="com.jd">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit" version="2.11.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.e4.ui.workbench.addons.swt"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui.console"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.e4.ui.workbench"/>
+      <import plugin="org.eclipse.e4.ui.workbench.renderers.swt"/>
+      <import plugin="io.joy.post.flanker.common" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="io.joy.post.flanker.model" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="io.joy.post.flanker.http" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.httpcomponents.httpcore"/>
+      <import plugin="io.joy.post.flanker.log" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit.ui" version="2.11.0" match="greaterOrEqual"/>
+      <import plugin="io.joy.post.flanker.model.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.e4.ui.di"/>
+      <import plugin="org.eclipse.e4.core.contexts"/>
+      <import plugin="org.eclipse.e4.core.di"/>
+      <import plugin="org.eclipse.e4.ui.model.workbench"/>
+      <import plugin="io.joy.post.flanker.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.apache.httpcomponents.httpclient"/>
+      <import plugin="org.eclipse.e4.ui.services"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="io.joy.post.flanker.common.editor" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="io.joy.post.flanker.json" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="io.joy.post.flanker.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.core.filesystem"/>
+      <import plugin="org.eclipse.text"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.sweetlemonade.eclipse.json"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.apache.commons.lang3"/>
+      <import plugin="org.apache.commons.httpclient"/>
+      <import plugin="io.joy.post.flanker.target.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="io.joy.post.flanker.target" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.httpclient" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.httpcomponents.httpclient" version="4.5.5" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.lang" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="io.joy.post.flanker.console" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench" version="3.107.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface" version="3.11.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="io.joy.post.flanker.project" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="org.eclipse.ltk.core.refactoring"/>
+      <import plugin="org.eclipse.ui.forms" version="3.6.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.10.2" match="greaterOrEqual"/>
+      <import plugin="io.joy.post.flanker.target.editor" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="com.aptana.editor.common"/>
+      <import plugin="com.aptana.editor.json"/>
+      <import plugin="com.aptana.editor.html"/>
+      <import plugin="com.aptana.json.core"/>
+   </requires>
+
+   <plugin
+         id="com.jd.lcp.wuliuyun.api.doc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.jd.lcp.wuliuyun.api.doc.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.activity"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.application.e3"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.common.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.console"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.http"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.json"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.log"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.model.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.navigator.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.project"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.target"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.target.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.target.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.target.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.target.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.target.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="io.joy.post.flanker.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Common
+Bundle-SymbolicName: io.joy.post.flanker.common
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.gesila.test.guard.common.Activator
+Bundle-Vendor: GESILA
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.gesila.test.guard.common,
+ com.gesila.test.guard.common.font,
+ com.gesila.test.guard.common.listeners.manager,
+ com.gesila.test.guard.common.part

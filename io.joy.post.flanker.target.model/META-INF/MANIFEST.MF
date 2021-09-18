@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Model
+Bundle-SymbolicName: io.joy.post.flanker.target.model
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.keliangtek.simulab.target.model.Activator
+Bundle-Vendor: KELIANGTEK
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

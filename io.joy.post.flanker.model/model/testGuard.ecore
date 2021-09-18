@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="testGuard" nsURI="http://www.igesila.com/testGuard/0.1" nsPrefix="testGuard">
+  <eClassifiers xsi:type="ecore:EClass" name="TestGuard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Headers" eType="#//Headers"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Params" eType="#//Params"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requestBody" eType="#//RequestBody"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="api" eType="ecore:EClass ../../com.jd.lcp.wuliuyun.api.doc/model/api-doc.ecore#//api"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestGuardModule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Unit" upperBound="-1" eType="#//TestGuardUnit"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestGuardUnit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requestBody" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Headers">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Header" upperBound="-1"
+        eType="#//Header" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Header">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequestBody">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Params">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Param" upperBound="-1"
+        eType="#//Param" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Param">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityHeaderFields">
+    <eLiterals name="Allow">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="desc" value="可以对此实体执行的请求方法"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ContentEncoding" value="1" literal="Content-Encoding">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="desc" value="对主题执行的任意编码方式"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ContentLanguage" value="2" literal="Content-Language">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="desc" value="理解主体时最适宜使用的自然语言"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ContentLength" value="3" literal="Content-Length">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="desc" value="主体的长度和尺寸"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ContentLocation" value="4" literal="Content-Location">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="desc" value="资源实际所处的位置"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ContentMD5" value="5" literal="Content-MD5">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="desc" value="主体的MD5校验和"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ContentRange" value="6" literal="Content-Range">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="desc" value="在整个资源中此实体表的字节范围"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ContentType" value="7" literal="Content-Type">
+      <eAnnotations source="ExtendedMetaData" references="http://www.eclipse.org/emf/2002/Ecore#//EString/%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%">
+        <details key="desc" value="实际主体内对象的媒体类型"/>
+        <details key="content" value="application/json|application/xml|application/x-www-form-urlencoded"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Expires" value="8">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="desc" value="实体不再有效，要从原始的源端再次获取实体的日期和时间"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="LastModified" value="9" literal="Last-Modified">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="desc" value="实体最后一次被修改的日期和时间"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Accept" value="10" literal="Accept">
+      <eAnnotations source="ExtendedMetaData" references="http://www.eclipse.org/emf/2002/Ecore#//EString/%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%">
+        <details key="desc" value="指定客户端能够接收的内容类型"/>
+        <details key="content" value="application/json|text/plain"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Method">
+    <eLiterals name="GET"/>
+    <eLiterals name="POST" value="1"/>
+    <eLiterals name="UPDATE" value="2"/>
+    <eLiterals name="PUT" value="3" literal="PUT"/>
+  </eClassifiers>
+</ecore:EPackage>

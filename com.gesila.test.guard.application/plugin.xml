@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="com.gesila.test.guard.product"
+            application="com.gesila.test.guard.application.e3.application">
+         <property
+               name="appName"
+               value="com.gesila.test.guard.product">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/com.gesila.test.guard.application/css/testguard.css">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

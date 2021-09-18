@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PostFlanker Console
+Bundle-SymbolicName: io.joy.post.flanker.console;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: io.joy.post.flanker.console.Activator
+Bundle-Vendor: jd.com
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.console
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.gesila.test.guard.console
+Bundle-ActivationPolicy: lazy
+Export-Package: io.joy.post.flanker.console,
+ io.joy.post.flanker.console.factory,
+ io.joy.post.flanker.console.factory.impl
