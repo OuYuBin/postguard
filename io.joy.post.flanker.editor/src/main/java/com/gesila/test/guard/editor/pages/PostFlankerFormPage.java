@@ -48,6 +48,8 @@ import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.source.CompositeRuler;
 import org.eclipse.jface.text.source.LineNumberRulerColumn;
+import org.eclipse.jface.text.source.projection.ProjectionAnnotationModel;
+import org.eclipse.jface.text.source.projection.ProjectionSupport;
 import org.eclipse.jface.text.source.projection.ProjectionViewer;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.CellLabelProvider;
@@ -100,9 +102,12 @@ import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.internal.editors.text.EditorsPlugin;
+import org.eclipse.ui.texteditor.DefaultMarkerAnnotationAccess;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sweetlemonade.eclipse.json.JsonPlugin;
+import org.sweetlemonade.eclipse.json.editor.JsonAnnotationer;
 import org.sweetlemonade.eclipse.json.editor.JsonConfiguration;
 import org.sweetlemonade.eclipse.json.editor.JsonFormatter;
 import org.sweetlemonade.eclipse.json.model.JsonElement;
@@ -159,6 +164,10 @@ public class PostFlankerFormPage extends FormPage {
 	private Form form;
 
 	private TableViewer headerTableViewer;
+
+	private JsonAnnotationer requestJsonAnnotation;
+
+	private Text urlText;
 
 	public PostFlankerFormPage(FormEditor editor, String id, String title) {
 		super(editor, id, title);
@@ -1048,6 +1057,7 @@ public class PostFlankerFormPage extends FormPage {
 				JsonFormatter mFormatter = new JsonFormatter(mElement, JsonPlugin.getDefault().getPreferenceStore());
 				String format = mFormatter.format(document.getLength());
 				sourceViewer.getDocument().set(format);
+				requestJsonAnnotation.update(mElement);
 				EditingDomain editingDomain = getEditor().getAdapter(EditingDomain.class);
 				EAttribute value = TestGuardPackage.eINSTANCE.getRequestBody_Value();
 				RequestBody requestBody = testGuard.getRequestBody();
@@ -1066,22 +1076,34 @@ public class PostFlankerFormPage extends FormPage {
 		// ToolItem removeItem = new ToolItem(toolbar, SWT.NONE);
 		// removeItem.setImage(Activator.getDefault().getImageRegistry().get("remove"));
 
-		CompositeRuler ruler = new CompositeRuler();
-
 		LineNumberRulerColumn lineCol = new LineNumberRulerColumn();
 		lineCol.setBackground(new Color(Display.getCurrent(), 147, 224, 255));
-		ruler.addDecorator(0, lineCol);
 
-		sourceViewer = new ProjectionViewer(textComposite, ruler, null, false,
+		CompositeRuler verticalRuler = new CompositeRuler();
+		ProjectionAnnotationModel projectionAnnotationModel = new ProjectionAnnotationModel();
+		verticalRuler.setModel(projectionAnnotationModel);
+		verticalRuler.addDecorator(0, lineCol);
+
+		sourceViewer = new ProjectionViewer(textComposite, verticalRuler, null, false,
 				SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		sourceViewer.setDocument(document);
 		sourceViewer.configure(new JsonConfiguration(null));
-		StyledText styledText = sourceViewer.getTextWidget();
+		sourceViewer.setDocument(document, projectionAnnotationModel);
 
+		DefaultMarkerAnnotationAccess annotationAccess = new DefaultMarkerAnnotationAccess();
+		final ProjectionSupport projectionSupport = new ProjectionSupport(sourceViewer, annotationAccess,
+				EditorsPlugin.getDefault().getSharedTextColors());
+		projectionSupport.install();
+		sourceViewer.doOperation(ProjectionViewer.TOGGLE);
+		requestJsonAnnotation = new JsonAnnotationer(sourceViewer.getProjectionAnnotationModel(), null, sourceViewer);
+		StyledText styledText = sourceViewer.getTextWidget();
+		styledText.setMargins(1, 0, 0, 0);
+		styledText.setMarginColor(new Color(Display.getCurrent(), 147, 224, 255));
 		// 设置自动换行
 		styledText.setWordWrap(true);
 		styledText.setFont(JFaceResources.getTextFont());
 		styledText.setText(testGuard.getRequestBody().getValue() == null ? "" : testGuard.getRequestBody().getValue());
+		JsonElement mElement = new JsonParserMy(document).parse();
+		requestJsonAnnotation.update(mElement);
 
 		// bodyText = new Text(textComposite, SWT.BORDER | SWT.MULTI |
 		// SWT.WRAP);

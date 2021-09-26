@@ -55,6 +55,7 @@ import com.aptana.editor.html.HTMLPlugin;
 import com.aptana.editor.html.HTMLSourceConfiguration;
 import com.aptana.editor.json.JSONSourceConfiguration;
 import com.aptana.editor.json.JSONSourceViewerConfiguration;
+import com.aptana.editor.json.cn.enflame.viewer.json.EnflameJSONSourceViewerConfiguration;
 import com.gesila.test.guard.http.models.PostResponseInfo;
 import com.gesila.test.guard.json.model.PostFlankerJSONObject;
 import com.gesila.test.guard.json.model.PostFlankerJSONObject.Type;
@@ -125,7 +126,8 @@ public class GsilaTestGuardResponseViewPart extends ViewPart implements IGesilaT
 				"}");
 		commonProjectionViewer = new CommonProjectionViewer(cTabFolder, ruler, null, false,
 				SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		commonProjectionViewer.configure(new JSONSourceViewerConfiguration(getChainedPreferenceStore(), null));
+		//commonProjectionViewer.configure(new JSONSourceViewerConfiguration(getChainedPreferenceStore(), null));
+		commonProjectionViewer.configure(new EnflameJSONSourceViewerConfiguration(getChainedPreferenceStore(), null));
 		commonProjectionViewer.setDocument(document,projectionAnnotationModel);
 
 		ProjectionSupport projectionSupport = new ProjectionSupport(commonProjectionViewer,
@@ -166,10 +168,10 @@ public class GsilaTestGuardResponseViewPart extends ViewPart implements IGesilaT
 		tree.setHeaderVisible(true);
 		tree.setLinesVisible(true);
 		tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		TreeColumn descColumn = new TreeColumn(treeViewer.getTree(), SWT.NONE);
-		descColumn.setWidth(100);
-		descColumn.setText("描述");
-		descColumn.setMoveable(true);
+//		TreeColumn descColumn = new TreeColumn(treeViewer.getTree(), SWT.NONE);
+//		descColumn.setWidth(100);
+//		descColumn.setText("描述");
+//		descColumn.setMoveable(true);
 
 		TreeColumn column = new TreeColumn(treeViewer.getTree(), SWT.NONE);
 		column.setWidth(150);
@@ -267,9 +269,9 @@ public class GsilaTestGuardResponseViewPart extends ViewPart implements IGesilaT
 				String image = "full/obj16/GenericValue";
 				switch (columnIndex) {
 				case 0:
-				case 1:
+				//case 1:
 					return null;
-				case 2:
+				case 1:
 					String name = ((PostFlankerJSONObject) element).getName();
 					if (name.equals("_ApplicationId") || name.equals("_ApplicationKey")) {
 						image = "full/obj16/IntegralValue.gif";
@@ -295,13 +297,13 @@ public class GsilaTestGuardResponseViewPart extends ViewPart implements IGesilaT
 			@Override
 			public String getColumnText(Object element, int columnIndex) {
 				switch (columnIndex) {
+//				case 0:
+//					return ((PostFlankerJSONObject) element).getDesc() == null ? ""
+//							: ((PostFlankerJSONObject) element).getDesc();
 				case 0:
-					return ((PostFlankerJSONObject) element).getDesc() == null ? ""
-							: ((PostFlankerJSONObject) element).getDesc();
-				case 1:
 					return ((PostFlankerJSONObject) element).getName() == null ? ""
 							: ((PostFlankerJSONObject) element).getName();
-				case 2:
+				case 1:
 					return ((PostFlankerJSONObject) element).getValue() == null ? ""
 							: ((PostFlankerJSONObject) element).getValue();
 				}

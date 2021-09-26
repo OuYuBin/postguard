@@ -30,7 +30,7 @@ public class Perspective implements IPerspectiveFactory {
 		
 		
 		layout.addView("com.gesila.test.guard.ui.views.GsilaTestGuardResponseViewPart", IPageLayout.RIGHT,
-				0.70f, editorArea);
+				0.60f, editorArea);
 
 		IFolderLayout bottom= layout.createFolder("left", IPageLayout.BOTTOM, 0.80F, editorArea);
 		bottom.addView("com.gesila.test.guard.ui.views.TestGuardPropertyPageBookView");

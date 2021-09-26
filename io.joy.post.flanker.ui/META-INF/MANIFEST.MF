@@ -24,7 +24,8 @@ Require-Bundle: org.eclipse.ui,
  com.aptana.editor.json,
  com.aptana.editor.html,
  com.aptana.json.core,
- io.joy.post.flanker.model
+ io.joy.post.flanker.model,
+ com.aptana.editor.json.cn.enflame.viewer.json
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: io.joy.post.flanker.ui,

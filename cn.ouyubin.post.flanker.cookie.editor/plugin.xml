@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated cookie -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="cn.ouyubin.post.flanker.cookie.editor.CookieModelWizardID"
+            name="%_UI_CookieModelWizard_label"
+            class="cn.ouyubin.post.flanker.cookie.editor.CookieModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CookieModelFile.gif">
+         <description>%_UI_CookieModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated cookie -->
+      <editor
+            id="cn.ouyubin.post.flanker.cookie.editor.CookieEditorID"
+            name="%_UI_CookieEditor_label"
+            icon="icons/full/obj16/CookieModelFile.gif"
+            extensions="pfc"
+            class="cn.ouyubin.post.flanker.cookie.editor.CookieEditor"
+            contributorClass="cn.ouyubin.post.flanker.cookie.editor.CookieActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
